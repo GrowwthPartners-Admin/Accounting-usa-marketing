@@ -1,4 +1,19 @@
+# Dependencies and generated output
 node_modules/
 dist/
+.vite/
+.vite-react-ssg-temp/
+*.tsbuildinfo
+
+# Local environment files
+.env
+.env.*
+!.env.example
 *.local
+
+# Logs and machine-specific files
+*.log
 .DS_Store
+.idea/
+.vscode/
+*.code-workspace
