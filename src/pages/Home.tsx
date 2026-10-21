@@ -15,6 +15,8 @@ import { ContactSection } from '../components/landing/ContactSection'
 import Footer  from '../components/landing/SiteFooter'
 import { ContactModalProvider } from '../components/contact/ContactModalContext'
 
+const siteUrl = import.meta.env.VITE_SITE_URL?.trim().replace(/\/+$/, '')
+
 export function Component() {
   return (
     <ContactModalProvider>
@@ -27,6 +29,8 @@ export function Component() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Accounting Services in the USA | Growwth Partners" />
         <meta property="og:description" content="Clearer books, useful reporting, and accounting support built around your US business." />
+        {siteUrl && <link rel="canonical" href={`${siteUrl}/`} />}
+        {siteUrl && <meta property="og:url" content={`${siteUrl}/`} />}
       </Head>
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-[#10283b]">Skip to main content</a>
       <SiteHeader />
