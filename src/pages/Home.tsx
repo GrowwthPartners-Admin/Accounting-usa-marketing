@@ -38,13 +38,13 @@ export function Component() {
         <HeroSection />
         <AwardsSection />
         <OverviewSection />
+        <SocialProofSection />
         <ServicesSection />
         <AudienceSection />
         <ComparisonSection />
         <ProcessSection />
         <ScenariosSection />
         <WhyChooseSection />
-        <SocialProofSection />
         <FaqSection />
         <ContactSection />
       </main>
