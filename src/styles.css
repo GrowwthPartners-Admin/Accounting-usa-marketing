@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: #102f3b;
+  background: #fff;
+  font-synthesis: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  min-width: 320px;
+}
+
+::selection {
+  color: #102f3b;
+  background: #bce9df;
+}
+
+.container-shell {
+  width: min(100% - 2rem, 1320px);
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: clamp(5rem, 8vw, 7.75rem);
+}
+
+.hero-background {
+  background:
+    radial-gradient(circle at 20% 10%, rgb(28 117 131 / 30%), transparent 34%),
+    linear-gradient(135deg, #0d3441 0%, #092733 58%, #071f29 100%);
+}
+
+.cta-grid {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 40%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 40%) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows .38s cubic-bezier(.22, 1, .36, 1), opacity .24s ease;
+}
+
+.faq-answer[data-open="true"] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.contact-dialog::backdrop {
+  background: rgb(4 26 37 / 68%);
+  backdrop-filter: blur(6px);
+}
+
+:where(a, button, summary):focus-visible {
+  outline: 3px solid #f48a35;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
