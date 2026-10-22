@@ -26,7 +26,3 @@ export function SparkIcon({ className = '' }: IconProps) {
     </svg>
   )
 }
-
-
-
-/// this file is responsibe for icons only
