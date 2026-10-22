@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { CheckIcon } from '../landing/Icons'
 import { CONTACT_CAMPAIGN_MESSAGE, sendContactRequest, type ContactApiPayload } from '../../lib/contactApi'
+import { markLeadSubmitted } from '../../lib/leadConversion'
 
 type ContactModalProps = {
   open: boolean
@@ -28,10 +30,11 @@ const inputClass =
 const labelClass = 'block text-[13px] font-bold text-[#28434b]'
 
 export function ContactModal({ open, onRequestClose }: ContactModalProps) {
+  const navigate = useNavigate()
   const dialogRef = useRef<HTMLDialogElement>(null)
   const nameRef = useRef<HTMLInputElement>(null)
   const requestIdRef = useRef(0)
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle')
+  const [status, setStatus] = useState<'idle' | 'sending'>('idle')
   const [error, setError] = useState('')
 
   useEffect(() => {
@@ -83,7 +86,8 @@ export function ContactModal({ open, onRequestClose }: ContactModalProps) {
       await sendContactRequest(payload)
       if (requestId !== requestIdRef.current) return
       form.reset()
-      setStatus('success')
+      markLeadSubmitted()
+      navigate('/thank-you')
     } catch {
       if (requestId !== requestIdRef.current) return
       setStatus('idle')
@@ -127,16 +131,7 @@ export function ContactModal({ open, onRequestClose }: ContactModalProps) {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true" className="h-5 w-5"><path d="M5 5l14 14M19 5 5 19" /></svg>
           </button>
 
-          {status === 'success' ? (
-            <div className="flex min-h-[440px] flex-col justify-center pr-4">
-              <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#e3f5ec] text-[#20856c]"><CheckIcon className="h-8 w-8" /></span>
-              <p className="mt-7 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#d66a29]">Request received</p>
-              <h2 id="contact-modal-title" className="mt-3 text-3xl font-extrabold tracking-[-0.04em]">Thanks for reaching out.</h2>
-              <p className="mt-4 max-w-md text-sm leading-7 text-[#5b7076]">Your details have been sent to the Growwth Partners team. We will be in touch soon.</p>
-              <button type="button" onClick={onRequestClose} className="mt-8 self-start rounded-lg bg-[#0d3441] px-6 py-3 text-sm font-bold text-white transition hover:bg-[#195365]">Close</button>
-            </div>
-          ) : (
-            <>
+          <>
               <p className="pr-12 text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#d66a29]">Start a conversation</p>
               <h2 id="contact-modal-title" className="mt-3 pr-12 text-[1.8rem] font-extrabold leading-tight tracking-[-0.045em] sm:text-[2.1rem]">Tell us what you need.</h2>
               <p className="mt-3 max-w-md text-sm leading-6 text-[#64787c]">Share a few details and we will get back to you about your accounting needs.</p>
@@ -171,8 +166,7 @@ export function ContactModal({ open, onRequestClose }: ContactModalProps) {
                 </button>
                 <p className="text-center text-xs leading-5 text-[#758a8e]">We use your details to respond to your request. <a href="https://growwthpartners.com/privacy-policy" className="font-semibold text-[#1a728c] underline underline-offset-2">Privacy policy</a></p>
               </form>
-            </>
-          )}
+          </>
         </div>
       </div>
     </dialog>

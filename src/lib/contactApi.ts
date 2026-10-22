@@ -28,4 +28,8 @@ export async function sendContactRequest(payload: ContactApiPayload): Promise<vo
   if (!response.ok) {
     throw new Error(`Contact API request failed with status ${response.status}`)
   }
+
+  if ((await response.text()).trim() === 'false') {
+    throw new Error('Contact API rejected the inquiry')
+  }
 }

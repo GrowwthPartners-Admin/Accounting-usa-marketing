@@ -5,5 +5,9 @@ export const routes: RouteRecord[] = [
     path: '/',
     lazy: () => import('./pages/Home'),
   },
+  {
+    path: '/thank-you',
+    lazy: () => import('./pages/ThankYou'),
+  },
 ]
 
