@@ -148,7 +148,7 @@ export function ContactModal({ open, onRequestClose }: ContactModalProps) {
                     <input id="contact-email" name="email" type="email" autoComplete="email" required maxLength={254} placeholder="you@company.com" className={inputClass} />
                   </label>
                   <label className={labelClass} htmlFor="contact-phone">Phone number
-                    <input id="contact-phone" name="phoneNumber" type="tel" autoComplete="tel" inputMode="tel" required minLength={7} maxLength={30} placeholder="+65 855 000 00" className={inputClass} />
+                    <input id="contact-phone" name="phoneNumber" type="tel" autoComplete="tel" inputMode="tel" required minLength={7} maxLength={30} placeholder="+1 202 555 0147" className={inputClass} />
                   </label>
                 </div>
                 <label className={labelClass} htmlFor="contact-service">Service Looking For
