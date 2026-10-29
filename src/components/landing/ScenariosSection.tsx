@@ -65,7 +65,7 @@ export function ScenariosSection() {
                   setHasInteracted(true)
                   setActiveIndex(index)
                 }}
-                className={`group flex min-h-[112px] flex-col justify-between rounded-[20px] border p-4 text-left transition duration-200 sm:p-5 ${selected ? 'border-[#73b69d] bg-[#eaf5ef] shadow-[0_12px_30px_rgba(15,60,57,0.09)]' : 'border-[#dce8e3] bg-[#f9fbfa] hover:-translate-y-0.5 hover:border-[#9ecbb9] hover:bg-white hover:shadow-[0_10px_24px_rgba(15,60,57,0.06)]'}`}
+                className={`group flex min-h-[112px] flex-col justify-between rounded-2xl border p-4 text-left transition duration-200 sm:p-5 ${selected ? 'border-[#73b69d] bg-[#eaf5ef] shadow-[0_12px_30px_rgba(15,60,57,0.09)]' : 'border-[#dce8e3] bg-[#f9fbfa] hover:-translate-y-0.5 hover:border-[#9ecbb9] hover:bg-white hover:shadow-[0_10px_24px_rgba(15,60,57,0.06)]'}`}
               >
                 <span className="flex w-full items-start justify-between gap-2">
                   <span className={`flex h-10 w-10 items-center justify-center rounded-xl ${selected ? 'bg-[#cfe9dc] text-[#16765e]' : 'bg-white text-[#3c7c72] shadow-sm'}`}>
@@ -79,7 +79,7 @@ export function ScenariosSection() {
           })}
         </div>
 
-        <div className="mt-5 overflow-hidden rounded-[28px] border border-[#dce8e3] bg-white shadow-[0_24px_60px_rgba(15,60,57,0.09)]">
+        <div className="mt-5 overflow-hidden rounded-2xl border border-[#dce8e3] bg-white shadow-[0_24px_60px_rgba(15,60,57,0.09)]">
           <motion.div
             key={active.label}
             initial={hasInteracted && !reduceMotion ? { opacity: 0, y: 10 } : false}
@@ -98,7 +98,7 @@ export function ScenariosSection() {
               </h3>
               <div className="mt-8 border-t border-white/20 pt-6">
                 <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#a7e8d8]">The situation</p>
-                <p className="mt-3 max-w-lg text-[15px] leading-7 text-[#d7e7e5]">{active.situation}</p>
+                <p className="body-copy mt-3 max-w-lg text-[15px] leading-7 text-[#d7e7e5]">{active.situation}</p>
               </div>
               <ContactButton className="mt-9 inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-extrabold text-[#0d3441] shadow-[0_12px_26px_rgba(3,20,29,0.18)] transition hover:bg-[#dff4ec]">
                 Discuss your situation <ArrowIcon className="h-4 w-4" />
@@ -106,23 +106,23 @@ export function ScenariosSection() {
             </div>
 
             <div className="p-7 sm:p-9 lg:p-11">
-              <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#bd682e]">A possible approach</p>
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-[#176b67]">A possible approach</p>
               <ol className="mt-5 space-y-3">
                 {active.approach.map((item, index) => (
                   <li key={item} className="flex items-start gap-4 rounded-[16px] border border-[#e3ece8] bg-[#f9fbfa] p-4">
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#e5f3eb] text-[11px] font-extrabold text-[#1d826b]">
                       {String(index + 1).padStart(2, '0')}
                     </span>
-                    <span className="pt-0.5 text-sm font-semibold leading-6 text-[#3c5960]">{item}</span>
+                    <span className="body-copy pt-0.5 text-sm font-semibold leading-6 text-[#3c5960]">{item}</span>
                   </li>
                 ))}
               </ol>
-              <div className="mt-6 rounded-[18px] border border-[#cfe8da] bg-[#edf7f1] p-5 sm:p-6">
+              <div className="mt-6 rounded-2xl border border-[#cfe8da] bg-[#edf7f1] p-5 sm:p-6">
                 <div className="flex items-center gap-2.5 text-[#21836a]">
                   <Target className="h-5 w-5" strokeWidth={1.8} aria-hidden="true" />
                   <p className="text-[11px] font-extrabold uppercase tracking-[0.17em]">What this helps with</p>
                 </div>
-                <p className="mt-3 text-[15px] font-semibold leading-7 text-[#295a55]">{active.outcome}</p>
+                <p className="body-copy mt-3 text-[15px] font-semibold leading-7 text-[#295a55]">{active.outcome}</p>
               </div>
             </div>
           </motion.div>

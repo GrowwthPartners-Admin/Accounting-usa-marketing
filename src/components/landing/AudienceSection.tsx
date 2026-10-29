@@ -22,9 +22,9 @@ export function AudienceSection() {
         <div className="grid gap-x-9 sm:grid-cols-2">
           {audiences.map((audience, index) => (
             <article key={audience.title} className="border-t border-white/20 py-6">
-              <span className="text-[11px] font-extrabold tracking-[0.18em] text-[#f3a56d]">{String(index + 1).padStart(2, '0')}</span>
+              <span className="text-[11px] font-extrabold tracking-[0.18em] text-[#a7e8d8]">{String(index + 1).padStart(2, '0')}</span>
               <h3 className="mt-3 text-lg font-extrabold tracking-tight text-white">{audience.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-[#bed2d4]">{audience.text}</p>
+              <p className="body-copy mt-2 text-sm leading-7 text-[#bed2d4]">{audience.text}</p>
             </article>
           ))}
         </div>

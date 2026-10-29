@@ -22,7 +22,7 @@ export function FaqSection() {
             const answerId = `faq-answer-${index}`
 
             return (
-              <article key={item.question} className={`border bg-white transition-colors duration-300 ${isOpen ? 'border-[#8bc1ae]' : 'border-[#dce7e3]'}`}>
+              <article key={item.question} className={`rounded-2xl border bg-white transition-colors duration-300 ${isOpen ? 'border-[#8bc1ae]' : 'border-[#dce7e3]'}`}>
                 <h3>
                   <button
                     type="button"
@@ -38,7 +38,7 @@ export function FaqSection() {
                 </h3>
                 <div id={answerId} role="region" aria-labelledby={questionId} aria-hidden={!isOpen} data-open={isOpen} className="faq-answer">
                   <div className="min-h-0 overflow-hidden">
-                    <p className="mx-6 mb-5 border-t border-[#e6eeeb] pt-4 text-center text-sm leading-7 text-[#5a6d72]">{item.answer}</p>
+                    <p className="body-copy mx-6 mb-5 border-t border-[#e6eeeb] pt-4 text-center text-sm leading-7 text-[#5a6d72]">{item.answer}</p>
                   </div>
                 </div>
               </article>

@@ -38,7 +38,7 @@ function LogoCard({ logo, duplicate = false }: { logo: Logo; duplicate?: boolean
     <div
       role="listitem"
       aria-hidden={duplicate}
-      className="mx-3 flex h-24 w-40 shrink-0 snap-start items-center justify-center rounded-xl border border-[#dce8e3] bg-white p-2 shadow-[0_10px_30px_rgba(15,60,57,0.06)]"
+      className="mx-3 flex h-24 w-40 shrink-0 snap-start items-center justify-center rounded-2xl border border-[#dce8e3] bg-white p-2 shadow-[0_10px_30px_rgba(15,60,57,0.06)]"
     >
       <img
         src={logo.image}
@@ -56,8 +56,8 @@ export function TrustedLogosSection() {
   const logoList = useMemo(() => (reduceMotion ? logos : [...logos, ...logos]), [reduceMotion])
 
   return (
-    <section id="trusted-by" className="bg-white py-16 sm:py-20">
-      <div className="container-shell overflow-hidden rounded-[24px] border border-[#dce8e3] bg-[#f4f8f6] py-10 shadow-[0_20px_60px_rgba(15,60,57,0.06)] sm:py-12">
+    <section id="trusted-by" className="section-space bg-white">
+      <div className="container-shell container-shell--wide overflow-hidden rounded-2xl border border-[#dce8e3] bg-[#f4f8f6] py-10 shadow-[0_20px_60px_rgba(15,60,57,0.06)] sm:py-12">
         <motion.div
           initial={false}
           whileInView={reduceMotion ? undefined : { y: [18, 0] }}

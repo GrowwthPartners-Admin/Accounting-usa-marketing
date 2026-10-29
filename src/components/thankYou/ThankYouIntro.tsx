@@ -18,7 +18,7 @@ export function ThankYouIntro() {
       </p>
 
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-        <Link to="/" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#eb7932] px-6 py-3.5 text-sm font-extrabold text-white shadow-[0_16px_36px_rgba(235,121,50,0.22)] transition hover:-translate-y-0.5 hover:bg-[#d96523]">
+        <Link to="/" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#c2410c] px-6 py-3.5 text-sm font-extrabold text-white shadow-[0_16px_36px_rgba(194,65,12,0.22)] transition hover:-translate-y-0.5 hover:bg-[#9a3412]">
           Back to home
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
