@@ -23,7 +23,7 @@ export function Component() {
         <ThankYouHeader />
         <main className="relative flex-1 overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f3f8f6_48%,#ffffff_100%)]">
           <div aria-hidden="true" className="absolute left-0 top-16 h-72 w-72 rounded-full bg-[#2b9d83]/10 blur-3xl" />
-          <div aria-hidden="true" className="absolute right-0 top-24 h-80 w-80 rounded-full bg-[#eb7932]/10 blur-3xl" />
+          <div aria-hidden="true" className="absolute right-0 top-24 h-80 w-80 rounded-full bg-[#2b9d83]/10 blur-3xl" />
           <div className="container-shell relative py-14 sm:py-16 lg:py-20">
             <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <ThankYouIntro />

@@ -13,8 +13,8 @@ export function FeaturedTestimonials() {
   }, [])
 
   return (
-    <div aria-label="Featured client stories" className="mx-auto mt-12 max-w-6xl">
-      <div className="rounded-[24px] border border-[#dce8e3] bg-white p-5 shadow-[0_22px_60px_rgba(15,60,57,0.09)] sm:p-7 lg:p-9">
+    <div aria-label="Featured client stories" className="mx-auto mt-12 max-w-6xl min-[1920px]:max-w-[1360px] min-[2560px]:max-w-[1520px]">
+      <div className="rounded-2xl border border-[#dce8e3] bg-white p-5 shadow-[0_22px_60px_rgba(15,60,57,0.09)] sm:p-7 lg:p-9">
         <div className="grid gap-8 lg:grid-cols-[18rem_1fr] lg:gap-10">
           <aside className="flex flex-col items-center text-center">
             <div className="h-32 w-32 overflow-hidden rounded-full border-4 border-[#e5f3eb] bg-[#e5f3eb] shadow-[0_16px_42px_rgba(15,60,57,0.12)] sm:h-36 sm:w-36">
@@ -51,17 +51,17 @@ export function FeaturedTestimonials() {
           </aside>
 
           <div className="min-w-0" aria-live="polite">
-            <MessageSquareQuote className="mb-4 h-8 w-8 text-[#d66a29]" aria-hidden="true" />
-            <div className="mb-4 flex gap-1 text-[#ed7a32]" aria-label="5 out of 5 stars">
+            <MessageSquareQuote className="mb-4 h-8 w-8 text-[#176b67]" aria-hidden="true" />
+            <div className="mb-4 flex gap-1 text-[#176b67]" aria-label="5 out of 5 stars">
               {[0, 1, 2, 3, 4].map((star) => <Star key={star} className="h-5 w-5 fill-current" aria-hidden="true" />)}
             </div>
             <h3 className="text-2xl font-extrabold leading-tight tracking-[-0.02em] text-[#10313c] sm:text-3xl">
               “{activeStory.headline}”
             </h3>
-            <p className="mt-5 text-base leading-8 text-[#566a70]">{activeStory.shortQuote}</p>
+            <p className="body-copy-lead mt-5 text-base leading-8 text-[#566a70]">{activeStory.shortQuote}</p>
 
             {expandedStory === activeFeatured && (
-              <div className="mt-5 space-y-4 text-base leading-8 text-[#566a70]">
+              <div className="body-copy-lead mt-5 space-y-4 text-base leading-8 text-[#566a70]">
                 {activeStory.fullQuote.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               </div>
             )}
@@ -70,7 +70,7 @@ export function FeaturedTestimonials() {
               type="button"
               aria-expanded={expandedStory === activeFeatured}
               onClick={() => setExpandedStory((current) => current === activeFeatured ? null : activeFeatured)}
-              className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-[#bd5c25] transition hover:text-[#8e4015]"
+              className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-[#176b67] transition hover:text-[#0d514d]"
             >
               {expandedStory === activeFeatured ? 'Show less' : 'Read full story'}
               {expandedStory === activeFeatured

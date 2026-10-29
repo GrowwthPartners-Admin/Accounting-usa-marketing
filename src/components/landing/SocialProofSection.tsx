@@ -17,9 +17,9 @@ export function SocialProofSection() {
             centered
           />
 
-          <div className="relative mx-auto mt-11 hidden max-w-6xl md:block">
-            <div className="absolute -inset-4 rounded-[28px] bg-[#2e9278]/15 blur-xl" aria-hidden="true" />
-            <div className="relative overflow-hidden rounded-[24px] border border-white bg-white shadow-[0_24px_70px_rgba(15,60,57,0.12)]">
+          <div className="relative mx-auto mt-11 hidden max-w-6xl md:block min-[1920px]:max-w-[1360px] min-[2560px]:max-w-[1520px]">
+            <div className="absolute -inset-4 rounded-2xl bg-[#2e9278]/15 blur-xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-2xl border border-white bg-white shadow-[0_24px_70px_rgba(15,60,57,0.12)]">
               <img src={socialProofBanner} alt="Growwth Partners client presence and accreditations" width="1500" height="844" className="aspect-[16/9] w-full object-cover" loading="lazy" />
             </div>
           </div>
@@ -29,11 +29,11 @@ export function SocialProofSection() {
               const Icon = stat.icon
 
               return (
-                <div key={stat.label} className="rounded-[20px] border border-[#dce8e3] bg-white p-5 text-center shadow-[0_14px_36px_rgba(15,60,57,0.06)]">
+                <div key={stat.label} className="rounded-2xl border border-[#dce8e3] bg-white p-5 text-center shadow-[0_14px_36px_rgba(15,60,57,0.06)]">
                   <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-[#e5f3eb] text-[#23876e]">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <p className="text-4xl font-extrabold tracking-[-0.04em] text-[#d66a29]">{stat.value}</p>
+                  <p className="text-4xl font-extrabold tracking-[-0.04em] text-[#176b67]">{stat.value}</p>
                   <p className="mt-1 text-sm font-extrabold text-[#10313c]">{stat.label}</p>
                 </div>
               )

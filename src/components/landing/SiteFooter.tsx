@@ -18,23 +18,23 @@ export default function Footer() {
       />
       <div
         aria-hidden="true"
-        className="absolute right-0 top-10 h-72 w-72 rounded-full bg-[#ed7a32]/8 blur-3xl"
+        className="absolute right-0 top-10 h-72 w-72 rounded-full bg-[#2b9d83]/8 blur-3xl"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div className="container-shell relative py-12 lg:py-16">
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
-          <div className="rounded-[2rem] border border-[#dce8e3] bg-[linear-gradient(135deg,#ffffff_0%,#f3f9f5_100%)] p-6 shadow-[0_20px_70px_rgba(15,60,57,0.08)] sm:p-8">
+          <div className="rounded-2xl border border-[#dce8e3] bg-[linear-gradient(135deg,#ffffff_0%,#f3f9f5_100%)] p-6 shadow-[0_20px_70px_rgba(15,60,57,0.08)] sm:p-8">
             <h2 className="mt-5 max-w-3xl text-2xl font-black leading-tight tracking-[-0.03em] text-[#10313c] sm:text-3xl lg:text-[2rem]">
               Growwth Partners
             </h2>
-            <p className="mt-3 max-w-3xl text-base font-semibold leading-8 text-[#5a6d72] sm:text-lg">
+            <p className="body-copy-lead mt-3 max-w-3xl text-base font-semibold leading-8 text-[#5a6d72] sm:text-lg">
               Singapore-headquartered. 200+ businesses served since 2011 across
               Singapore and international markets, with senior finance leadership
               built for founders, operators, and growth-stage teams.
             </p>
           </div>
 
-          <div className="rounded-[2rem] border border-[#dce8e3] bg-white p-5 shadow-[0_20px_70px_rgba(15,60,57,0.08)] sm:p-6">
+          <div className="rounded-2xl border border-[#dce8e3] bg-white p-5 shadow-[0_20px_70px_rgba(15,60,57,0.08)] sm:p-6">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-[#23876e]">
               Quick Links
             </p>
